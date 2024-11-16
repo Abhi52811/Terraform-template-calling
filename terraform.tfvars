@@ -1,0 +1,17 @@
+resource_group_name = "terraformRG"
+location            = "Central India"
+network_name        = "example-network"
+network_address_space = ["10.0.0.0/16"]
+subnet_name         = "subnet1"
+subnet_address_prefix = ["10.0.2.0/24"]
+nic_name            = "example-nic"
+vm_name             = "example-machine"
+vm_size             = "Standard_F2"
+admin_username      = "adminuser"
+admin_password      = "P@$$w0rd1234!"
+os_disk_caching     = "ReadWrite"
+os_disk_storage_account_type = "Standard_LRS"
+source_image_publisher = "MicrosoftWindowsServer"
+source_image_offer     = "WindowsServer"
+source_image_sku       = "2016-Datacenter"
+source_image_version   = "latest"
