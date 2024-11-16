@@ -1,13 +1,13 @@
 variable "resource_group_name" {
   description = "The name of the resource group."
   type        = string
-  default     = "terraformRG"
+  default     = "VIshesh_RG_1"
 }
 
 variable "location" {
   description = "The location for all Azure resources."
   type        = string
-  default     = "Central India"
+  default     = "East US"
 }
 
 variable "network_name" {

@@ -2,33 +2,25 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "RG" {
-  name     = var.resource_group_name
-  location = var.location
-  tags = {
-    Owner = "Abhishek"
-  }
-}
-
 resource "azurerm_virtual_network" "Vnet" {
   name                = var.network_name
-  location            = azurerm_resource_group.RG.location
-  resource_group_name = azurerm_resource_group.RG.name
+  location            = var.location
+  resource_group_name = var.resource_group_name
   address_space       = var.network_address_space
 }
 
 
 resource "azurerm_subnet" "subnet1" {
   name                 = var.subnet_name
-  resource_group_name  = azurerm_resource_group.RG.name
+  resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.Vnet.name
   address_prefixes     = var.subnet_address_prefix
 }
 
 resource "azurerm_network_interface" "nic" {
   name                = var.nic_name
-  location            = azurerm_resource_group.RG.location
-  resource_group_name = azurerm_resource_group.RG.name
+  location            = var.location
+  resource_group_name = var.resource_group_name
 
   ip_configuration {
     name                          = var.subnet_name
@@ -39,8 +31,8 @@ resource "azurerm_network_interface" "nic" {
 
 resource "azurerm_windows_virtual_machine" "vm" {
   name                = var.vm_name
-  resource_group_name = azurerm_resource_group.RG.name
-  location            = azurerm_resource_group.RG.location
+  resource_group_name = var.resource_group_name
+  location            = var.location
   size                = var.vm_size
   admin_username      = var.admin_username
   admin_password      = var.admin_password

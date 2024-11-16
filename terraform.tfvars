@@ -1,5 +1,5 @@
-resource_group_name = "terraformRG"
-location            = "Central India"
+resource_group_name = "VIshesh_RG_1"
+location            = "East US"
 network_name        = "example-network"
 network_address_space = ["10.0.0.0/16"]
 subnet_name         = "subnet1"
