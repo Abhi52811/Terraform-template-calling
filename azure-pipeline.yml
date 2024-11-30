@@ -25,7 +25,7 @@ stages:
     steps:
     - template: templates/terraform-init.yml
       parameters:
-        workingDirectory: $(System.DefaultWorkingDirectory)/Terraform
+        workingDirectory: $(System.DefaultWorkingDirectory)
 
   - job: TerraformPlan
     displayName: "Terraform Plan"
@@ -33,7 +33,7 @@ stages:
     steps:
     - template: templates/terraform-plan.yml
       parameters:
-        workingDirectory: $(System.DefaultWorkingDirectory)/Terraform
+        workingDirectory: $(System.DefaultWorkingDirectory)
 
   - job: TerraformApply
     displayName: "Terraform Apply"
@@ -41,4 +41,4 @@ stages:
     steps:
     - template: templates/terraform-apply.yml
       parameters:
-        workingDirectory: $(System.DefaultWorkingDirectory)/Terraform
+        workingDirectory: $(System.DefaultWorkingDirectory)
