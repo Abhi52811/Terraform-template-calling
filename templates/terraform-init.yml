@@ -6,7 +6,7 @@ steps:
   displayName: 'Terraform : azurerm Init'
   inputs:
     command: 'init'
-    commandOptions: '-reconfigure'
+    commandOptions: '-migrate-state'
     backendAzureRmUseEnvironmentVariablesForAuthentication: false
     backendAzureRmUseEntraIdForAuthentication: false
     backendServiceArm: 'IT Infra-124'
