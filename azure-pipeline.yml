@@ -10,18 +10,9 @@ stages:
     steps:
     - template: templates/terraform-install.yml
 
-  - job: Script
-    displayName: "Run Script"
-    dependsOn: TerraformInstall
-    steps:
-    - bash: |
-        dir
-        pwd
-      displayName: "List and Print Current Directory"
-
   - job: TerraformInit
     displayName: "Initialize Terraform"
-    dependsOn: Script
+    dependsOn: TerraformInstall
     steps:
     - template: templates/terraform-init.yml
       parameters:
