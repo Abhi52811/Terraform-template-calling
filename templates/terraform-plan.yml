@@ -6,7 +6,6 @@ steps:
   displayName: 'Terraform : azurerm'
   inputs:
     command: plan
-    workingDirectory: '$(System.DefaultWorkingDirectory)/_Terraform-CI/drop'
     environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription'
     backendAzureRmUseEnvironmentVariablesForAuthentication: false
     backendAzureRmUseEntraIdForAuthentication: false
