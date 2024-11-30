@@ -10,14 +10,6 @@ stages:
     steps:
     - template: templates/terraform-install.yml
 
-  - job: TerraformInit
-    displayName: "Initialize Terraform"
-    dependsOn: TerraformInstall
-    steps:
-    - template: templates/terraform-init.yml
-      parameters:
-        workingDirectory: $(System.DefaultWorkingDirectory)
-
   - job: TerraformPlan
     displayName: "Terraform Plan"
     dependsOn: TerraformInit
