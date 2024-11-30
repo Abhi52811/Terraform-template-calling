@@ -99,3 +99,25 @@ variable "source_image_version" {
   type        = string
   default     = "latest"
 }
+
+variable "subscription_id" {
+  description = "The Azure subscription ID to use"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "The Azure tenant ID"
+  type        = string
+}
+
+variable "client_id" {
+  description = "The Azure service principal client ID"
+  type        = string
+}
+
+variable "client_secret" {
+  description = "The Azure service principal client secret"
+  type        = string
+  sensitive   = true
+}
+
