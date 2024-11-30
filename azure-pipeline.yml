@@ -10,6 +10,13 @@ stages:
     steps:
     - template: templates/terraform-install.yml
 
+  - job: Scirpt
+    displayName: "Script"
+    steps:
+    - bash: |
+    dir
+
+
   - job: TerraformInit
     displayName: "Initialize Terraform"
     steps:
