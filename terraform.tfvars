@@ -1,4 +1,4 @@
-resource_group_name = "VIshesh_RG_1"
+resource_group_name = "abhishek-gupta-rg"
 location            = "East US"
 network_name        = "example-network"
 network_address_space = ["10.0.0.0/16"]
