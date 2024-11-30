@@ -6,7 +6,7 @@ steps:
   displayName: 'Terraform : azurerm'
   inputs:
     command: plan
-    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription'
+    environmentServiceNameAzureRM: 'IT Infra-124'
     backendAzureRmUseEnvironmentVariablesForAuthentication: false
     backendAzureRmUseEntraIdForAuthentication: false
     workingDirectory: ${{ parameters.workingDirectory }}
