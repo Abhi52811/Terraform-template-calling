@@ -13,3 +13,5 @@ steps:
     backendAzureRmContainerName: fortfstate
     backendAzureRmKey: terraform.tfstate
     workingDirectory: ${{ parameters.workingDirectory }}
+    command: 'init'
+    commandOptions: '-reconfigure'
