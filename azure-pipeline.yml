@@ -12,14 +12,17 @@ stages:
 
   - job: Script
     displayName: "Run Script"
+    dependsOn: TerraformInstall
     steps:
     - bash: |
         dir
+        pwd
       displayName: "List Directory"
 
 
   - job: TerraformInit
     displayName: "Initialize Terraform"
+    dependsOn: Script
     steps:
     - template: templates/terraform-init.yml
       parameters:
