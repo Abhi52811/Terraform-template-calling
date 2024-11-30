@@ -5,8 +5,8 @@ stages:
 - stage: Terraform
   displayName: "Terraform Operations"
   jobs:
-  - job: TerraforInstall
-    displayName: "Terraform Install"
+  - job: TerraformInstall
+    displayName: "Install Terraform"
     steps:
     - template: templates/terraform-install.yml
 
@@ -17,8 +17,7 @@ stages:
     - bash: |
         dir
         pwd
-      displayName: "List Directory"
-
+      displayName: "List and Print Current Directory"
 
   - job: TerraformInit
     displayName: "Initialize Terraform"
