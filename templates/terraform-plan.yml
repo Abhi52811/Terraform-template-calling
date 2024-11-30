@@ -2,11 +2,15 @@ parameters:
   workingDirectory: ''
 
 steps:
+- template: templates/terraform-init.yml
+  parameters:
+    workingDirectory: ${{ parameters.workingDirectory }}
+
 - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
-  displayName: 'Terraform : azurerm'
+  displayName: 'Terraform : Plan'
   inputs:
     command: plan
-    environmentServiceNameAzureRM: 'IT Infra-124'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription'
     backendAzureRmUseEnvironmentVariablesForAuthentication: false
     backendAzureRmUseEntraIdForAuthentication: false
     workingDirectory: ${{ parameters.workingDirectory }}
