@@ -1,8 +1,13 @@
 parameters:
   workingDirectory: ''
 
+
 steps:
-- task: TerraformCLI@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+  displayName: 'Terraform : azurerm'
   inputs:
     command: apply
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription'
+    backendAzureRmUseEnvironmentVariablesForAuthentication: false
+    backendAzureRmUseEntraIdForAuthentication: false
     workingDirectory: ${{ parameters.workingDirectory }}
