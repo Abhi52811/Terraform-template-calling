@@ -1,6 +1,5 @@
 parameters:
   workingDirectory: ''
-  backendServiceName: ''
 
 steps:
 - task: TerraformCLI@0
