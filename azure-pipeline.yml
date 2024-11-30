@@ -5,6 +5,9 @@ stages:
 - stage: Terraform
   displayName: "Terraform Operations"
   jobs:
+  steps:
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@1
+    displayName: 'Install Terraform latest'
   - job: TerraformInit
     displayName: "Initialize Terraform"
     steps:
