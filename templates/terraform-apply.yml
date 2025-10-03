@@ -1,0 +1,16 @@
+parameters:
+  workingDirectory: ''
+
+steps:
+- template: terraform-plan.yml
+  parameters:
+    workingDirectory: ${{ parameters.workingDirectory }}
+
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+  displayName: 'Terraform : azurerm'
+  inputs:
+    command: apply
+    environmentServiceNameAzureRM: 'IT Infra-124'
+    backendAzureRmUseEnvironmentVariablesForAuthentication: false
+    backendAzureRmUseEntraIdForAuthentication: false
+    workingDirectory: ${{ parameters.workingDirectory }}

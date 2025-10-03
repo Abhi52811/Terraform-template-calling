@@ -1,0 +1,27 @@
+trigger:
+- main
+
+stages:
+- stage: Terraform
+  displayName: "Terraform Operations"
+  jobs:
+  - job: TerraformInstall
+    displayName: "Install Terraform"
+    steps:
+    - template: templates/terraform-install.yml
+
+  - job: TerraformPlan
+    displayName: "Terraform Plan"
+    dependsOn: TerraformInit
+    steps:
+    - template: templates/terraform-plan.yml
+      parameters:
+        workingDirectory: $(System.DefaultWorkingDirectory)
+
+  - job: TerraformApply
+    displayName: "Terraform Apply"
+    dependsOn: TerraformPlan
+    steps:
+    - template: templates/terraform-apply.yml
+      parameters:
+        workingDirectory: $(System.DefaultWorkingDirectory)

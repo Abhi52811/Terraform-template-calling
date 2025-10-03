@@ -1,0 +1,17 @@
+parameters:
+  workingDirectory: ''
+
+steps:
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+  displayName: 'Terraform : azurerm Init'
+  inputs:
+    command: 'init'
+    commandOptions: '-migrate-state'
+    backendAzureRmUseEnvironmentVariablesForAuthentication: false
+    backendAzureRmUseEntraIdForAuthentication: false
+    backendServiceArm: 'IT Infra-124'
+    backendAzureRmResourceGroupName: 'abhishek-gupta-rg'
+    backendAzureRmStorageAccountName: forterraform008
+    backendAzureRmContainerName: fortfstate
+    backendAzureRmKey: terraform.tfstate
+    workingDirectory: ${{ parameters.workingDirectory }}
